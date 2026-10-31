@@ -1,0 +1,21 @@
+PAPERBRIEF AI - HOSTING THROUGH HUGGING FACE SPACES
+
+1. Create or sign in to a Hugging Face account: https://huggingface.co
+2. Visit https://huggingface.co/new-space
+3. Set Space name to paperbrief-ai (or your preferred available name).
+4. Choose Docker as the Space SDK; choose Public visibility.
+5. Review any required subscription or billing information before proceeding.
+6. In the new Space, select Files > Add file > Upload files.
+7. Upload app.py, summarizer.py, requirements.txt, Dockerfile, README.md,
+   and the contents of static/ preserving the static folder structure.
+   The README.md included in THIS package must be at the Space repository root.
+8. Commit the files. Open the Build logs / Logs tab to see progress.
+9. When the Space is Running, open its App tab and test PDF + DOCX uploads.
+10. Share the displayed app URL (normally https://huggingface.co/spaces/USERNAME/SPACE).
+
+NOTES
+- Upload individual files, NOT the ZIP archive as a single file.
+- The teacher can use the browser link without installing Python.
+- Model downloading and CPU-only summarization may be slow.
+- On free/limited hosting the model might fail due to disk, memory, or time limits.
+- The original FastAPI application stays the same; only hosting configuration was added.

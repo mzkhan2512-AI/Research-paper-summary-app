@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Summarize long PDF and Word research documents with a Transformer AI model." />
+  <title>PaperBrief AI — Document Summarizer</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="nav"><div class="wrap nav-inner"><div class="brand"><span class="brand-mark">P</span> PaperBrief <span class="ai">AI</span></div><span class="nav-note">Research made readable</span></div></header>
+  <main class="wrap">
+    <section class="hero"><div class="eyebrow">TRANSFORMER-POWERED SUMMARIZATION</div><h1>Understand long documents.<br><span>In a fraction of the time.</span></h1><p>Turn dense research papers and Word documents into clear, focused summaries, without losing your place.</p></section>
+    <section class="upload-card" aria-labelledby="upload-heading">
+      <div class="card-head"><div><h2 id="upload-heading">Summarize your document</h2><p>Upload a file and let the AI extract the key ideas.</p></div><span class="privacy">Files aren't stored after processing</span></div>
+      <form id="uploadForm" novalidate>
+        <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Choose PDF or DOCX document">
+          <div class="upload-icon" aria-hidden="true">↑</div>
+          <strong>Drop a file here, or <span class="browse">browse files</span></strong>
+          <p>PDF or Word (.docx) only · Maximum 12 MB</p>
+          <input type="file" id="fileInput" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" aria-label="Document to summarize" />
+        </div>
+        <div id="selected" class="selected hidden"><span aria-hidden="true">▤</span><div class="selected-name" id="selectedName"></div><button type="button" id="clearFile" class="subtle-button">Remove</button></div>
+        <div id="error" class="alert hidden" role="alert"></div>
+        <div class="actions"><button type="submit" id="submitBtn" class="primary" disabled><span id="buttonText">Generate summary</span><span aria-hidden="true">→</span></button><span class="hint">The first run downloads the AI model.</span></div>
+      </form>
+      <div class="progress hidden" id="progress" role="status" aria-live="polite"><span class="spinner"></span><div><strong>Reading and summarizing your document…</strong><p>Large files can take several minutes. Please keep this tab open.</p></div></div>
+    </section>
+    <section id="result" class="results hidden" aria-live="polite">
+      <div class="results-heading"><div><div class="eyebrow">YOUR SUMMARY IS READY</div><h2>Document overview</h2><p id="resultMeta"></p></div><a id="download" class="download" href="#">↓ Download full summary</a></div>
+      <article class="summary-box"><h3>Executive summary</h3><p id="overview"></p></article>
+      <details id="sectionsWrap" class="sections"><summary>View supporting section summaries <span id="sectionCount"></span></summary><div id="sectionsList"></div></details>
+      <p class="disclaimer">AI-generated summaries may omit nuances or contain inaccuracies. Verify important details against the original document.</p>
+    </section>
+    <div class="footer-info"><span>✓ PDF &amp; DOCX</span><span>✓ On-page results</span><span>✓ Downloadable summary</span><span>✓ No account required</span></div>
+  </main>
+  <footer class="site-footer">PaperBrief AI · Built for focused reading</footer>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
